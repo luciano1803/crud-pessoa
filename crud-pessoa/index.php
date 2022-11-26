@@ -1,3 +1,9 @@
+<?php
+
+ require_once"classe-pessoa.php";
+ $p = new pessoa("crudpdo","localhost","root","");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,7 +27,11 @@
     </section>
      
     <section id="direita">
+       <?php
        
+          $dados = $p->buscardados();
+           var_dump($dados);
+       ?>
     <table>
         <tr id="titulo">
        <td>NOME</td>
