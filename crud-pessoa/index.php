@@ -29,8 +29,11 @@
     <section id="direita">
        <?php
        
-          $dados = $p->buscardados();
+          $dados = $p->buscar();
+          
+          echo"<pre>";
            var_dump($dados);
+           echo"</pre>";
        ?>
     <table>
         <tr id="titulo">

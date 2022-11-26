@@ -4,8 +4,8 @@
  {
 
     private $pdo;
-    // conexão com banco de dados
- public function_construct($dbname,$host, $user , $senha)
+   
+       public function_construct($dbname, $host, $user , $senha)
  {
     try
     {
@@ -24,7 +24,7 @@
     }
  }
     // funcao para buscar dados e colocar no lado direito da tela
-    public function buscardados()
+    Public function buscar()
     {
       $res = array();  
       $cmd = $this->pdo->query("SELECT * FROM pessoa ORDER BY nome");
@@ -32,6 +32,5 @@
        return $res;
 
     }
- }
-
-?>
+   }
+  ?>
