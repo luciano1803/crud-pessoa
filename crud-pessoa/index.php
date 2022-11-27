@@ -1,7 +1,7 @@
 <?php
 
- require_once"classe-pessoa.php";
- $p = new pessoa("crudpdo","localhost","root","");
+ require_once'classe-pessoa.php';
+ $p = new Pessoa("crudpdo","localhost","root","");
 ?>
 
 <!DOCTYPE html>
@@ -27,26 +27,41 @@
     </section>
      
     <section id="direita">
-       <?php
-       
-          $dados = $p->buscar();
-          
-          echo"<pre>";
-           var_dump($dados);
-           echo"</pre>";
-       ?>
     <table>
         <tr id="titulo">
        <td>NOME</td>
        <td>TELEFONE</td>
        <td colspan="2">EMAIL</td>
         </tr>
-        <tr>
-       <td>maria</td>
-       <td>7145689253</td>
-       <td>maria@gmail.com</td>
-       <td><a href="">Editar</a><a href="">Excluir</a></td>
-        </tr>
+       <?php
+       
+          $dados = $p->buscar();
+
+          
+           var_dump($dados);
+           if(count($dados)>0)
+           {
+              for($i=0; $i < count($dados); $i++)
+              {
+                 echo "<tr>";
+                foreach($dados[$i] as $k => $v)
+                {
+                  if($k != "id")
+                  {
+                     echo"<td>".$v."</td>";
+                  }
+                }
+                 echo"</tr>";
+              }
+    ?>
+                <td><a href="">Editar</a><a href="">Excluir</a></td>
+        <?php
+           }
+        ?>
+      
+        
+    
+      
      </table>
 
     </section>
