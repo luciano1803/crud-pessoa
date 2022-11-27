@@ -6,7 +6,7 @@
 
     private $pdo;
 
-     public function_construct ($dbname,$host,$user ,$senha)
+          public function_construct ($dbname,$host,$user ,$senha)
      {
 
          try
