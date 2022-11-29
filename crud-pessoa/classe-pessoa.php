@@ -6,7 +6,7 @@
 
     private $pdo;
 
-        public function __construct('$dbname, $host, $user,$senha,')
+        public function  __construct( '$dbname, $host, $user,$senha')
         {
 
           try
@@ -14,7 +14,7 @@
          $this->pdo = new PDO("mysql:dbname=".$bdname.";host=".$host,$user,$senha);
           }
           catch(PDOException $e)
-          {
+          { 
              echo"Erro com banco de dados:".$se-> getMessage();
            exit();
           }
